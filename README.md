@@ -11,7 +11,7 @@ Works on **macOS** and **Linux**. Compatible with **Oh My Zsh**, **Zinit**, **An
 ### One-liner (works for everyone)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USER/terminal-error-audio/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thronebold-342/terminal-error-audio/main/install.sh | bash
 ```
 
 Then open a **new terminal tab**. Done.
@@ -21,7 +21,7 @@ Then open a **new terminal tab**. Done.
 ### Oh My Zsh
 
 ```bash
-git clone https://github.com/YOUR_USER/terminal-error-audio \
+git clone https://github.com/thronebold-342/terminal-error-audio \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/terminal-error-audio
 ```
 
@@ -36,7 +36,7 @@ plugins=(... terminal-error-audio)
 ### Zinit
 
 ```zsh
-zinit light YOUR_USER/terminal-error-audio
+zinit light thronebold-342/terminal-error-audio
 ```
 
 ---
@@ -44,7 +44,7 @@ zinit light YOUR_USER/terminal-error-audio
 ### Antigen
 
 ```zsh
-antigen bundle YOUR_USER/terminal-error-audio
+antigen bundle thronebold-342/terminal-error-audio
 ```
 
 ---
@@ -53,7 +53,7 @@ antigen bundle YOUR_USER/terminal-error-audio
 
 ```bash
 mkdir -p ~/.config/terminal-error-audio
-curl -fsSL https://raw.githubusercontent.com/YOUR_USER/terminal-error-audio/main/terminal-error-audio.plugin.zsh \
+curl -fsSL https://raw.githubusercontent.com/thronebold-342/terminal-error-audio/main/terminal-error-audio.plugin.zsh \
   -o ~/.config/terminal-error-audio/terminal-error-audio.plugin.zsh
 
 echo 'source "$HOME/.config/terminal-error-audio/terminal-error-audio.plugin.zsh"' >> ~/.zshrc
@@ -118,7 +118,7 @@ sudo dnf install espeak-ng
 ## Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USER/terminal-error-audio/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thronebold-342/terminal-error-audio/main/uninstall.sh | bash
 ```
 
 ---
