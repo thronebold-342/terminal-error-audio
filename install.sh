@@ -4,13 +4,13 @@
 #  Supports: Oh My Zsh · Zinit · Antigen · plain zsh · bash
 #
 #  One-liner install:
-#    curl -fsSL https://raw.githubusercontent.com/YOUR_USER/terminal-error-audio/main/install.sh | bash
+#    curl -fsSL https://raw.githubusercontent.com/thronebold-342/terminal-error-audio/main/install.sh | bash
 # ──────────────────────────────────────────────────────────────────────────────
 
 set -e
 
 PLUGIN_NAME="terminal-error-audio"
-REPO_URL="https://raw.githubusercontent.com/YOUR_USER/${PLUGIN_NAME}/main"
+REPO_URL="https://raw.githubusercontent.com/thronebold-342/${PLUGIN_NAME}/main"
 PLUGIN_FILE="${PLUGIN_NAME}.plugin.zsh"
 
 # ── Colours ───────────────────────────────────────────────────────────────────
@@ -110,7 +110,7 @@ elif [[ "$HAS_ZINIT" == "true" ]]; then
   cat >> "$RC" << EOF
 
 # terminal-error-audio
-zinit light YOUR_USER/${PLUGIN_NAME}
+zinit light thronebold-342/${PLUGIN_NAME}
 EOF
   success "Added zinit snippet to $RC"
 
@@ -118,7 +118,7 @@ EOF
 elif [[ "$HAS_ANTIGEN" == "true" ]]; then
   info "Antigen detected — adding antigen bundle"
   # Insert before 'antigen apply'
-  sed -i.bak "/antigen apply/i antigen bundle YOUR_USER/${PLUGIN_NAME}" "$RC"
+  sed -i.bak "/antigen apply/i antigen bundle thronebold-342/${PLUGIN_NAME}" "$RC"
   success "Added antigen bundle line to $RC"
 
 # ── Path 4: Standalone (source line) ─────────────────────────────────────────
@@ -130,7 +130,7 @@ else
 
   cat >> "$RC" << EOF
 
-# terminal-error-audio — https://github.com/YOUR_USER/${PLUGIN_NAME}
+# terminal-error-audio — https://github.com/thronebold-342/${PLUGIN_NAME}
 source "\$HOME/.config/${PLUGIN_NAME}/${PLUGIN_FILE}"
 EOF
   success "Added source line to $RC"
