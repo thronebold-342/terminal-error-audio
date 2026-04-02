@@ -67,26 +67,16 @@ _tea_precmd() {
   local _exit=$?
   [[ $_exit -eq 0 ]] && return 0
 
-  # Play the sound immediately
-  _tea_play_sound
-
-  # Build a message from the command that failed
-  local _cmd_name="${_tea_last_cmd%% *}"
-  local _msg=""
-
-  case "$_cmd_name" in
-    python|python3)  _msg="Python error." ;;
-    node|npm|npx)    _msg="Node error." ;;
-    git)             _msg="Git error." ;;
-    cd)              _msg="No such directory." ;;
-    brew)            _msg="Brew error." ;;
-    *)               _msg="Error in $_cmd_name." ;;
-  esac
-
-  [[ $_exit -ne 127 ]] && _msg="$_msg Exit code $_exit."
-  [[ $_exit -eq 127 ]] && _msg="Command not found: $_cmd_name."
-
-  _tea_speak "$_msg"
+  # Only play sound, nothing else
+  if [[ "$(uname -s)" == "Darwin" ]]; then
+    _tea_has afplay && afplay "$TERM_ERROR_SOUND" >/dev/null 2>&1 &
+  else
+    if _tea_has paplay; then
+      paplay /usr/share/sounds/freedesktop/stereo/dialog-error.oga >/dev/null 2>&1 &
+    elif _tea_has aplay; then
+      aplay -q /usr/share/sounds/freedesktop/stereo/dialog-error.oga >/dev/null 2>&1 &
+    fi
+  fi
 }
 
 # ── Register hooks ────────────────────────────────────────────────────────────
