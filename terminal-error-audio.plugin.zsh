@@ -16,7 +16,10 @@ _tea_has() { command -v "$1" &>/dev/null; }
 # ── Play an error sound ───────────────────────────────────────────────────────
 _tea_play_sound() {
   if [[ "$(uname -s)" == "Darwin" ]]; then
-    _tea_has afplay && afplay "$TERM_ERROR_SOUND" >/dev/null 2>&1 &
+
+    _tea_has afplay && ( afplay "$TERM_ERROR_SOUND" > /dev/null 2>&1 ) & disown
+   # _tea_has afplay && afplay "$TERM_ERROR_SOUND" >/dev/null 2>&1 &
+   
   else
     if _tea_has paplay; then
       paplay /usr/share/sounds/freedesktop/stereo/dialog-error.oga >/dev/null 2>&1 &
