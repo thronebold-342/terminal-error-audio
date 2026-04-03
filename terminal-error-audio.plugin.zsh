@@ -9,7 +9,10 @@
 export _TEA_LOADED=1
 
 # ── User-configurable options (set BEFORE sourcing in your .zshrc) ────────────
-: "${TERM_ERROR_SOUND:=/System/Library/Sounds/Funk.aiff}"
+: "${TERM_ERROR_SOUND:=/Users/perrugia/Music/faaah.mp3}" 
+# : "${TERM_ERROR_SOUND:=/System/Library/Sounds/Funk.aiff}"
+
+
 
 _tea_has() { command -v "$1" &>/dev/null; }
 
