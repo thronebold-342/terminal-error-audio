@@ -9,8 +9,9 @@
 export _TEA_LOADED=1
 
 # ── User-configurable options (set BEFORE sourcing in your .zshrc) ────────────
-: "${TERM_ERROR_SOUND:=/Users/perrugia/Music/faaah.mp3}" 
-# : "${TERM_ERROR_SOUND:=/System/Library/Sounds/Funk.aiff}"
+#IF YOU WANT TO ADD YOUR OWN SOUND, CHNAGE THE path *"/System/Library/Sounds/Funk.aiff" to your own audio path in your directory 
+: "${TERM_ERROR_SOUND:=/System/Library/Sounds/Funk.aiff}"
+
 
 
 
